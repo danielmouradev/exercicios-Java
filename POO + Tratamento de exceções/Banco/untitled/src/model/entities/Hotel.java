@@ -1,6 +1,8 @@
 package model.entities;
 
+import model.exceptions.DataInvalidaException;
 import model.exceptions.QuartoIndispException;
+import model.exceptions.QuartoNaoEncontradoException;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -34,6 +36,20 @@ public class Hotel {
     }
 
     public void fazerReserva(int numeroQuarto, LocalDate dataInicio, LocalDate dataFim){
+
+        throws QuartoNaoEncontradoException, DataInvalidaException, QuartoIndispException {
+            Quarto quarto = null;
+            for (Quarto q : quartos){
+                if (q.getNumero() == numeroQuarto){
+                    quarto = q;
+                    break;
+                }
+            }
+            if (quarto == null){
+                throw new QuartoNaoEncontradoException("Quarto número  " + numeroQuarto +
+                        " não foi encontrado");
+            }
+        }
     }
 
 
