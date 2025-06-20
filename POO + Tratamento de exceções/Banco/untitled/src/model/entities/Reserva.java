@@ -1,17 +1,17 @@
 package model.entities;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 public class Reserva {
     private int id;
     private Quarto quarto;
-    private LocalDate dataInicio;
-    private LocalDate dataFim;
+    private String dataInicio;
+    private String dataFim;
 
     public Reserva(){}
 
-    public Reserva(int id, Quarto quarto, LocalDate dataInicio, LocalDate dataFim){
-        this.id = id;
+    public Reserva(Quarto quarto, String dataInicio, String dataFim){
         this.quarto = quarto;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
@@ -33,19 +33,19 @@ public class Reserva {
         this.quarto = quarto;
     }
 
-    public LocalDate getDataInicio() {
+    public String getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(LocalDate dataInicio) {
+    public void setDataInicio(String dataInicio) {
         this.dataInicio = dataInicio;
     }
 
-    public LocalDate getDataFim() {
+    public String getDataFim() {
         return dataFim;
     }
 
-    public void setDataFim(LocalDate dataFim) {
+    public void setDataFim(String dataFim) {
         this.dataFim = dataFim;
     }
 }
